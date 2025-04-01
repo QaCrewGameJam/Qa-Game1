@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Floor
+  m_Name: BronzeShineRed
   m_Shader: {fileID: 4800000, guid: 933532a4fcc9baf4fa0491de14d08ed7, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -129,9 +129,9 @@ Material:
     - _WorkflowMode: 0
     - _ZWrite: 1
     m_Colors:
-    - _BaseColor: {r: 0.745283, g: 0.10898005, b: 0.30577487, a: 1}
-    - _Color: {r: 0.745283, g: 0.10898001, b: 0.30577484, a: 1}
+    - _BaseColor: {r: 0.5849056, g: 0.052420773, b: 0.21676818, a: 1}
+    - _Color: {r: 0.5849056, g: 0.05242075, b: 0.21676815, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _SpecColor: {r: 0.7075472, g: 0.54890317, b: 0.19691172, a: 1}
+    - _SpecColor: {r: 0.6313726, g: 0.3574255, b: 0.15686274, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
