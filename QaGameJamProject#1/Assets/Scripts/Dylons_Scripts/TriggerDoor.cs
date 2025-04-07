@@ -29,7 +29,7 @@ public class TriggerDoor : MonoBehaviour
             _doorAnimator.SetBool("Open", true);
             _doorAnimator.SetBool("Close", false);
    
-            doorOpening.Play();
+            //doorOpening.Play();
         }
     }
 
@@ -45,7 +45,7 @@ public class TriggerDoor : MonoBehaviour
             _doorAnimator.SetBool("Open", false);
             _doorAnimator.SetBool("Close", true);
 
-            doorClosing.Play();
+            //doorClosing.Play();
         }
     }
 
