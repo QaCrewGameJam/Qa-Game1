@@ -6,7 +6,7 @@ public class PlayerMovement : MonoBehaviour
 {
     [Header("Movement")]
     public float moveSpeed;
-    public float sprintSpeed;
+    public bool isRunning;
 
     public float groundDrag;
 
@@ -18,6 +18,9 @@ public class PlayerMovement : MonoBehaviour
     Vector3 moveDirection;
 
     Rigidbody rb;
+
+    public AudioSource walking;
+    public AudioSource running;
 
     private void Start()
     {
@@ -34,10 +37,12 @@ public class PlayerMovement : MonoBehaviour
         if(Input.GetKey(KeyCode.LeftShift))
         {
             moveSpeed = 10;
+            isRunning = true;
         }
         else
         {
             moveSpeed = 5;
+            isRunning = false;
         }
     }
 
@@ -57,5 +62,15 @@ public class PlayerMovement : MonoBehaviour
         moveDirection = orientation.forward * verticalInput + orientation.right * horizontalInput;
 
         rb.AddForce(moveDirection.normalized * moveSpeed * 10f, ForceMode.Force);
+
+
+        if(isRunning == true)
+        {
+            running.Play();
+        }
+        else
+        {
+            walking.Play();
+        }
     }
 }

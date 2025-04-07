@@ -8,6 +8,9 @@ public class TriggerDoor : MonoBehaviour
     public GameObject GreenLightSwitch;
     public GameObject RedLightSwitch;
 
+    public AudioSource doorOpening;
+    public AudioSource doorClosing;   
+
     void Start()
     {
         _doorAnimator = GetComponent<Animator>();
@@ -26,6 +29,7 @@ public class TriggerDoor : MonoBehaviour
             _doorAnimator.SetBool("Open", true);
             _doorAnimator.SetBool("Close", false);
    
+            doorOpening.Play();
         }
     }
 
@@ -40,6 +44,8 @@ public class TriggerDoor : MonoBehaviour
 
             _doorAnimator.SetBool("Open", false);
             _doorAnimator.SetBool("Close", true);
+
+            doorClosing.Play();
         }
     }
 
