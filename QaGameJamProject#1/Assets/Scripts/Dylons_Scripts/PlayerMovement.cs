@@ -34,7 +34,7 @@ public class PlayerMovement : MonoBehaviour
 
         rb.linearDamping = groundDrag;
 
-        if(Input.GetKey(KeyCode.LeftShift))
+        if(Input.GetKey(KeyCode.LeftShift) || Input.GetButton("Fire1"))
         {
             moveSpeed = 10;
             isRunning = true;
@@ -64,13 +64,13 @@ public class PlayerMovement : MonoBehaviour
         rb.AddForce(moveDirection.normalized * moveSpeed * 10f, ForceMode.Force);
 
 
-        if(isRunning == true)
+        if(horizontalInput != 0 && isRunning == true || verticalInput != 0 && isRunning == true)
         {
-            running.Play();
+            //running.Play();
         }
-        else
+        else if (horizontalInput != 0 || verticalInput != 0)
         {
-            walking.Play();
+            //walking.Play();
         }
     }
 }

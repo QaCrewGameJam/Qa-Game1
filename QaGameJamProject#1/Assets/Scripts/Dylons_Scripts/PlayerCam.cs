@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class PlayerMoveScript : MonoBehaviour
 {
-    public float sensX;
-    public float sensY;
+
+    public float mouseSens;
+    public float controllerSens;
 
     public Transform orientation;
 
@@ -21,12 +22,21 @@ public class PlayerMoveScript : MonoBehaviour
     void Update()
     {
         // get mouse input
-        float mouseX = Input.GetAxisRaw("Mouse X") * Time.deltaTime * sensX;
-        float mouseY = Input.GetAxisRaw("Mouse Y") * Time.deltaTime * sensY;
+        float mouseX = Input.GetAxisRaw("Mouse X") * Time.deltaTime * mouseSens;
+        float mouseY = Input.GetAxisRaw("Mouse Y") * Time.deltaTime * mouseSens;
+
+        float stickX = Input.GetAxisRaw("RightStickX") * Time.deltaTime * mouseSens;
+        float stickY = Input.GetAxisRaw("RightStickY") * Time.deltaTime * mouseSens;
+
+        float totalX = mouseX;
+        float totalY = mouseY; //+ stickY;
+
+        //xRotation += totalX;
+        //yRotation += totalY;
 
         yRotation += mouseX;
-
         xRotation -= mouseY;
+
         xRotation = Mathf.Clamp(xRotation, -90f, 90f);
 
         // rotate cam and orientation
