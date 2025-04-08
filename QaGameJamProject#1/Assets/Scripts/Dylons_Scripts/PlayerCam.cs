@@ -25,15 +25,6 @@ public class PlayerMoveScript : MonoBehaviour
         float mouseX = Input.GetAxisRaw("Mouse X") * Time.deltaTime * mouseSens;
         float mouseY = Input.GetAxisRaw("Mouse Y") * Time.deltaTime * mouseSens;
 
-        //float stickX = Input.GetAxisRaw("RightStick X") * Time.deltaTime * mouseSens;
-        //float stickY = Input.GetAxisRaw("RightStick Y") * Time.deltaTime * mouseSens;
-
-        //float totalX = mouseX + stickX;
-        //float totalY = mouseY + stickY;
-
-        //xRotation += totalX;
-        //yRotation += totalY;
-
         yRotation += mouseX;
         xRotation -= mouseY;
 

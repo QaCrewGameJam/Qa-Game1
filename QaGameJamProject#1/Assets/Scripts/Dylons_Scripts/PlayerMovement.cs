@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -22,10 +23,48 @@ public class PlayerMovement : MonoBehaviour
     public AudioSource walking;
     public AudioSource running;
 
-    private void Start()
+
+    [Header("Player Camera")]
+    public GameObject playerCamera;
+
+    public float mouseSens;
+    public float controllerSens;
+
+    float xRotation;
+    float yRotation;
+
+    [Header("Input Actions")]
+    [SerializeField] private InputActionAsset PlayerControls;
+
+    private InputAction moveAction;
+    private InputAction lookAction;
+    private InputAction sprintAction;
+
+    private void Awake()
     {
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+
         rb = GetComponent<Rigidbody>();
         rb.freezeRotation = true;
+
+        moveAction = PlayerControls.FindActionMap("Player").FindAction("Move");
+        lookAction = PlayerControls.FindActionMap("Player").FindAction("Look");
+        sprintAction = PlayerControls.FindActionMap("Player").FindAction("Sprint");
+    }
+
+    private void OnEnable()
+    {
+        moveAction.Enable();
+        lookAction.Enable();
+        sprintAction.Enable();
+    }
+
+    private void OnDisable()
+    {
+        moveAction.Disable();
+        lookAction.Disable();
+        sprintAction.Disable();
     }
 
     private void Update()
@@ -34,7 +73,7 @@ public class PlayerMovement : MonoBehaviour
 
         rb.linearDamping = groundDrag;
 
-        if(Input.GetKey(KeyCode.LeftShift) || Input.GetButton("Fire1"))
+        if(sprintAction.inProgress) //Input.GetKey(KeyCode.LeftShift) || Input.GetButton("Fire1"))
         {
             moveSpeed = 10;
             isRunning = true;
@@ -44,6 +83,20 @@ public class PlayerMovement : MonoBehaviour
             moveSpeed = 5;
             isRunning = false;
         }
+
+
+        // get mouse input
+        float mouseX = Input.GetAxisRaw("Mouse X") * Time.deltaTime * mouseSens;
+        float mouseY = Input.GetAxisRaw("Mouse Y") * Time.deltaTime * mouseSens;
+
+        yRotation += mouseX;
+        xRotation -= mouseY;
+
+        xRotation = Mathf.Clamp(xRotation, -90f, 90f);
+
+        // rotate cam and orientation
+        playerCamera.transform.rotation = Quaternion.Euler(xRotation, yRotation, 0);
+        orientation.rotation = Quaternion.Euler(0, yRotation, 0);
     }
 
     private void FixedUpdate()
