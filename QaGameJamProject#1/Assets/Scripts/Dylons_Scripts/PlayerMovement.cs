@@ -39,6 +39,8 @@ public class PlayerMovement : MonoBehaviour
     private InputAction moveAction;
     private InputAction lookAction;
     private InputAction sprintAction;
+    private Vector2 moveInput;
+    private Vector2 lookInput;
 
     private void Awake()
     {
@@ -51,6 +53,9 @@ public class PlayerMovement : MonoBehaviour
         moveAction = PlayerControls.FindActionMap("Player").FindAction("Move");
         lookAction = PlayerControls.FindActionMap("Player").FindAction("Look");
         sprintAction = PlayerControls.FindActionMap("Player").FindAction("Sprint");
+
+        lookAction.performed += context => lookInput = context.ReadValue<Vector2>();
+        lookAction.canceled += context => lookInput = Vector2.zero;
     }
 
     private void OnEnable()
@@ -73,7 +78,7 @@ public class PlayerMovement : MonoBehaviour
 
         rb.linearDamping = groundDrag;
 
-        if(sprintAction.inProgress) //Input.GetKey(KeyCode.LeftShift) || Input.GetButton("Fire1"))
+        if(sprintAction.inProgress)
         {
             moveSpeed = 10;
             isRunning = true;
@@ -89,8 +94,14 @@ public class PlayerMovement : MonoBehaviour
         float mouseX = Input.GetAxisRaw("Mouse X") * Time.deltaTime * mouseSens;
         float mouseY = Input.GetAxisRaw("Mouse Y") * Time.deltaTime * mouseSens;
 
-        yRotation += mouseX;
-        xRotation -= mouseY;
+        // get all mouse/controllers input
+        float mouseXRotation = lookInput.x * Time.deltaTime * mouseSens;
+        float mouseYRotation = lookInput.y * Time.deltaTime * mouseSens;
+
+        //yRotation += mouseX;
+        //xRotation -= mouseY;
+        xRotation -= mouseYRotation;
+        yRotation += mouseXRotation;
 
         xRotation = Mathf.Clamp(xRotation, -90f, 90f);
 

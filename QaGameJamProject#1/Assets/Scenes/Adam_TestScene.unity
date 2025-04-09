@@ -2087,6 +2087,8 @@ MonoBehaviour:
   InvisibleDoor: {fileID: 533215786}
   GreenLightSwitch: {fileID: 228648105}
   RedLightSwitch: {fileID: 1676646117}
+  doorOpening: {fileID: 0}
+  doorClosing: {fileID: 0}
 --- !u!95 &220784566
 Animator:
   serializedVersion: 7
@@ -3235,6 +3237,8 @@ MonoBehaviour:
   InvisibleDoor: {fileID: 1978443554}
   GreenLightSwitch: {fileID: 1522164502}
   RedLightSwitch: {fileID: 721631041}
+  doorOpening: {fileID: 0}
+  doorClosing: {fileID: 0}
 --- !u!1 &428201595
 GameObject:
   m_ObjectHideFlags: 0
@@ -5225,6 +5229,8 @@ MonoBehaviour:
   InvisibleDoor: {fileID: 966430594}
   GreenLightSwitch: {fileID: 2105258213}
   RedLightSwitch: {fileID: 331185067}
+  doorOpening: {fileID: 0}
+  doorClosing: {fileID: 0}
 --- !u!95 &753207096
 Animator:
   serializedVersion: 7
@@ -6940,8 +6946,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
+  isRunning: 0
   groundDrag: 5
   orientation: {fileID: 1181844716}
+  walking: {fileID: 0}
+  running: {fileID: 0}
+  playerCamera: {fileID: 1909607281}
+  mouseSens: 0
+  controllerSens: 0
+  PlayerControls: {fileID: -944628639613478452, guid: 6be5c0c513897e444b409d600e65bb49, type: 3}
 --- !u!1 &1140456398
 GameObject:
   m_ObjectHideFlags: 0
@@ -7348,6 +7361,8 @@ MonoBehaviour:
   InvisibleDoor: {fileID: 2129047622}
   GreenLightSwitch: {fileID: 167717397}
   RedLightSwitch: {fileID: 666951803}
+  doorOpening: {fileID: 0}
+  doorClosing: {fileID: 0}
 --- !u!95 &1198513870
 Animator:
   serializedVersion: 7
@@ -10235,6 +10250,8 @@ MonoBehaviour:
   InvisibleDoor: {fileID: 582780424}
   GreenLightSwitch: {fileID: 1269800330}
   RedLightSwitch: {fileID: 1451051862}
+  doorOpening: {fileID: 0}
+  doorClosing: {fileID: 0}
 --- !u!95 &1664624949
 Animator:
   serializedVersion: 7
@@ -11709,8 +11726,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14f88b3d72754ae44b2029c4e72bf3c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sensX: 250
-  sensY: 250
+  mouseSens: 200
+  controllerSens: 200
   orientation: {fileID: 1181844716}
 --- !u!1 &1918680794
 GameObject:
