@@ -23,30 +23,17 @@ public class PlayerMovement : MonoBehaviour
     public AudioSource walking;
     public AudioSource running;
 
-
-    [Header("Player Camera")]
-    public GameObject playerCamera;
-
-    public float mouseSens;
-    public float controllerSens;
-
-    float xRotation;
-    float yRotation;
-
     [Header("Input Actions")]
     [SerializeField] private InputActionAsset PlayerControls;
 
     private InputAction moveAction;
     private InputAction lookAction;
     private InputAction sprintAction;
-    private Vector2 moveInput;
-    private Vector2 lookInput;
+    public Vector2 moveInput;
+    public Vector2 lookInput;
 
     private void Awake()
     {
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
-
         rb = GetComponent<Rigidbody>();
         rb.freezeRotation = true;
 
@@ -78,7 +65,7 @@ public class PlayerMovement : MonoBehaviour
 
         rb.linearDamping = groundDrag;
 
-        if(sprintAction.inProgress)
+        if(sprintAction.inProgress && verticalInput > 0)
         {
             moveSpeed = 10;
             isRunning = true;
@@ -88,26 +75,6 @@ public class PlayerMovement : MonoBehaviour
             moveSpeed = 5;
             isRunning = false;
         }
-
-
-        // get mouse input
-        float mouseX = Input.GetAxisRaw("Mouse X") * Time.deltaTime * mouseSens;
-        float mouseY = Input.GetAxisRaw("Mouse Y") * Time.deltaTime * mouseSens;
-
-        // get all mouse/controllers input
-        float mouseXRotation = lookInput.x * Time.deltaTime * mouseSens;
-        float mouseYRotation = lookInput.y * Time.deltaTime * mouseSens;
-
-        //yRotation += mouseX;
-        //xRotation -= mouseY;
-        xRotation -= mouseYRotation;
-        yRotation += mouseXRotation;
-
-        xRotation = Mathf.Clamp(xRotation, -90f, 90f);
-
-        // rotate cam and orientation
-        playerCamera.transform.rotation = Quaternion.Euler(xRotation, yRotation, 0);
-        orientation.rotation = Quaternion.Euler(0, yRotation, 0);
     }
 
     private void FixedUpdate()
