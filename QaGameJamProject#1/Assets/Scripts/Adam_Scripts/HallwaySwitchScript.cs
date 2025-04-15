@@ -1,4 +1,6 @@
 using UnityEngine;
+using UnityEngine.VFX;
+using static UnityEditor.ShaderGraph.Internal.KeywordDependentCollection;
 
 public class HallwaySwitchScript : MonoBehaviour
 {
@@ -6,7 +8,9 @@ public class HallwaySwitchScript : MonoBehaviour
     [SerializeField] GameObject player;
     [SerializeField] GameObject hallwayPrefab;
     [SerializeField] Vector3 hallwayPivotPos;
+    GameObject tempObject;
 
+    int spawncounter = 0;
     private Vector3 hallwayTriggerPos;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -14,7 +18,11 @@ public class HallwaySwitchScript : MonoBehaviour
     {
         hallwayTriggerPos = this.gameObject.transform.position;
         hallwayPivotPos = GameObject.FindGameObjectWithTag("HallwayPivot").transform.position;
+        player = GameObject.FindGameObjectWithTag("Player");
+        CheckIfNewObject();
     }
+
+
 
     // Update is called once per frame
     void Update()
@@ -30,8 +38,21 @@ public class HallwaySwitchScript : MonoBehaviour
         if (other.gameObject.tag == "Player")
         {
             Debug.Log(hallwayTriggerPos);
-            Instantiate(hallwayPrefab, hallwayPivotPos, transform.rotation = Quaternion.Euler(0, 180, 0));
+            tempObject =Instantiate(hallwayPrefab, hallwayPivotPos, transform.rotation = Quaternion.Euler(0, 0, 0));
+            Debug.Log(hallwayPrefab);
             this.gameObject.SetActive(false);
+
         }
     }
+
+
+    void CheckIfNewObject()
+    {
+        if(hallwayPrefab == null)
+        {
+            hallwayPrefab = Resources.Load("BackwardsPrefab(Clone)") as GameObject;
+        }
+
+    }
+    
 }

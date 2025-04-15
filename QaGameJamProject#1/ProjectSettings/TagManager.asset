@@ -6,6 +6,8 @@ TagManager:
   tags:
   - HallwayPivot
   - HallwayPivotForwards
+  - HallwayTrigger
+  - HallwayBack
   layers:
   - Default
   - TransparentFX
