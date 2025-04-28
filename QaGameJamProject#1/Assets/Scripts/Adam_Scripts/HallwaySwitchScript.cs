@@ -40,7 +40,8 @@ public class HallwaySwitchScript : MonoBehaviour
             Debug.Log(hallwayTriggerPos);
             tempObject =Instantiate(hallwayPrefab, hallwayPivotPos, transform.rotation = Quaternion.Euler(0, 0, 0));
             Debug.Log(hallwayPrefab);
-            this.gameObject.SetActive(false);
+            Destroy(this.gameObject);
+            //this.gameObject.SetActive(false);
 
         }
     }
