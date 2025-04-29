@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class HallwaySwitchScriptForwards : MonoBehaviour
@@ -8,6 +9,8 @@ public class HallwaySwitchScriptForwards : MonoBehaviour
     [SerializeField] Vector3 hallwayPivotPos;
     [SerializeField] public GameObject backwardsSwitch;
     GameObject tempObject;
+    GameObject hallwayMaster;
+    List<GameObject> hallwayList = new List<GameObject>();
 
     int spawncounter = 0;
     private Vector3 hallwayTriggerPos;
@@ -22,6 +25,9 @@ public class HallwaySwitchScriptForwards : MonoBehaviour
         hallwayPivotPos = this.gameObject.transform.position + new Vector3(-72, -3, 130);
         player = GameObject.FindGameObjectWithTag("Player");
         CheckIfNewObject();
+
+        hallwayMaster = GameObject.FindGameObjectWithTag("HallwayList");
+        hallwayList = hallwayMaster.GetComponent<MasterHallwayControl>().hallwayList;
     }
 
     // Update is called once per frame
@@ -41,8 +47,13 @@ public class HallwaySwitchScriptForwards : MonoBehaviour
             tempObject = Instantiate(hallwayPrefab, hallwayPivotPos, transform.rotation = Quaternion.Euler(0, 0, 0));
             Debug.Log(hallwayPrefab);
             //Destroy(this.gameObject);
+
+            hallwayMaster.GetComponent<MasterHallwayControl>().AddHallwayToList(tempObject);
+
             backwardsSwitch.SetActive(false);
             this.gameObject.SetActive(false);
+
+            
         }
     }
 
