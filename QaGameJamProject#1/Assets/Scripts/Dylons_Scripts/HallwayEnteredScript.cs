@@ -23,7 +23,8 @@ public class HallwayEnteredScript : MonoBehaviour
             forwardCheckTrigger.SetActive(true);
             backwardCheckTrigger.SetActive(true);
 
-            this.gameObject.SetActive(false);
+            //this.gameObject.SetActive(false);
+            Destroy(this.gameObject);
         }
     }
 

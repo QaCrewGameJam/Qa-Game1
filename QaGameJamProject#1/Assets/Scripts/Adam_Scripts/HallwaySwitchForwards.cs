@@ -6,6 +6,7 @@ public class HallwaySwitchScriptForwards : MonoBehaviour
     [SerializeField] GameObject player;
     [SerializeField] GameObject hallwayPrefab;
     [SerializeField] Vector3 hallwayPivotPos;
+    [SerializeField] public GameObject backwardsSwitch;
     GameObject tempObject;
 
     int spawncounter = 0;
@@ -18,7 +19,7 @@ public class HallwaySwitchScriptForwards : MonoBehaviour
         //hallwayPivotPos = GameObject.FindGameObjectWithTag("HallwayPivotForwards").transform.position;
 
         // Finds Object Position and adds to the transform for the forward spawn location
-        hallwayPivotPos = this.gameObject.transform.position + new Vector3(-72, -3, 104);
+        hallwayPivotPos = this.gameObject.transform.position + new Vector3(-72, -3, 130);
         player = GameObject.FindGameObjectWithTag("Player");
         CheckIfNewObject();
     }
@@ -39,8 +40,9 @@ public class HallwaySwitchScriptForwards : MonoBehaviour
             Debug.Log(hallwayTriggerPos);
             tempObject = Instantiate(hallwayPrefab, hallwayPivotPos, transform.rotation = Quaternion.Euler(0, 0, 0));
             Debug.Log(hallwayPrefab);
-            Destroy(this.gameObject);
-            //this.gameObject.SetActive(false);
+            //Destroy(this.gameObject);
+            backwardsSwitch.SetActive(false);
+            this.gameObject.SetActive(false);
         }
     }
 
@@ -48,7 +50,7 @@ public class HallwaySwitchScriptForwards : MonoBehaviour
     {
         if (hallwayPrefab == null)
         {
-            hallwayPrefab = Resources.Load("BackwardsPrefab(Clone)") as GameObject;
+            hallwayPrefab = Resources.Load("ForwardsPrefab(Clone)") as GameObject;
         }
 
     }
