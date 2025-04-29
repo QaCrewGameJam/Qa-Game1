@@ -1,3 +1,5 @@
+using NUnit.Framework;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.VFX;
 using static UnityEditor.ShaderGraph.Internal.KeywordDependentCollection;
@@ -9,6 +11,8 @@ public class HallwaySwitchScript : MonoBehaviour
     [SerializeField] GameObject hallwayPrefab;
     [SerializeField] Vector3 hallwayPivotPos;
     GameObject tempObject;
+    GameObject hallwayMaster;
+    List<GameObject> hallwayList = new List<GameObject>();
 
     int spawncounter = 0;
     private Vector3 hallwayTriggerPos;
@@ -20,6 +24,8 @@ public class HallwaySwitchScript : MonoBehaviour
         hallwayPivotPos = GameObject.FindGameObjectWithTag("HallwayPivot").transform.position;
         player = GameObject.FindGameObjectWithTag("Player");
         CheckIfNewObject();
+        hallwayMaster = GameObject.FindGameObjectWithTag("HallwayList");
+        hallwayList = hallwayMaster.GetComponent<MasterHallwayControl>().hallwayList;
     }
 
 
@@ -27,7 +33,7 @@ public class HallwaySwitchScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
 
@@ -37,11 +43,11 @@ public class HallwaySwitchScript : MonoBehaviour
 
         if (other.gameObject.tag == "Player")
         {
-            Debug.Log(hallwayTriggerPos);
+            //Debug.Log(hallwayTriggerPos);
             tempObject =Instantiate(hallwayPrefab, hallwayPivotPos, transform.rotation = Quaternion.Euler(0, 0, 0));
-            Debug.Log(hallwayPrefab);
-            Destroy(this.gameObject);
-            //this.gameObject.SetActive(false);
+            //Debug.Log(hallwayPrefab);
+            hallwayMaster.GetComponent<MasterHallwayControl>().AddHallwayToList(tempObject);
+            this.gameObject.SetActive(false);
 
         }
     }
