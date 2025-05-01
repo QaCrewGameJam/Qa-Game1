@@ -21,7 +21,8 @@ public class HallwaySwitchScript : MonoBehaviour
     void Start()
     {
         hallwayTriggerPos = this.gameObject.transform.position;
-        hallwayPivotPos = GameObject.FindGameObjectWithTag("HallwayPivot").transform.position;
+        //hallwayPivotPos = GameObject.FindGameObjectWithTag("HallwayPivot").transform.position;
+        hallwayPivotPos = this.gameObject.transform.position + new Vector3(77, 0, -127);
         player = GameObject.FindGameObjectWithTag("Player");
         CheckIfNewObject();
         hallwayMaster = GameObject.FindGameObjectWithTag("HallwayList");
@@ -44,9 +45,10 @@ public class HallwaySwitchScript : MonoBehaviour
         if (other.gameObject.tag == "Player")
         {
             //Debug.Log(hallwayTriggerPos);
-            tempObject =Instantiate(hallwayPrefab, hallwayPivotPos, transform.rotation = Quaternion.Euler(0, 0, 0));
+            tempObject =Instantiate(hallwayPrefab, hallwayPivotPos, transform.rotation = Quaternion.Euler(0, 180, 0));
             //Debug.Log(hallwayPrefab);
             hallwayMaster.GetComponent<MasterHallwayControl>().AddHallwayToList(tempObject);
+
             this.gameObject.SetActive(false);
 
         }
@@ -57,7 +59,7 @@ public class HallwaySwitchScript : MonoBehaviour
     {
         if(hallwayPrefab == null)
         {
-            hallwayPrefab = Resources.Load("BackwardsPrefab(Clone)") as GameObject;
+            hallwayPrefab = Resources.Load("BackwardsTestPrefab(Clone)") as GameObject;
         }
 
     }

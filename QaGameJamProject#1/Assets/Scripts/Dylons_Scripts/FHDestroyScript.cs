@@ -1,9 +1,8 @@
 using UnityEngine;
 
-public class BackwardsAirlockSpawn : MonoBehaviour
+public class FHDestroyScript : MonoBehaviour
 {
-
-
+    [SerializeField] GameObject FirstHallway;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -11,9 +10,8 @@ public class BackwardsAirlockSpawn : MonoBehaviour
         
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnTriggerExit(Collider other)
     {
-        
+        Destroy(FirstHallway);
     }
 }

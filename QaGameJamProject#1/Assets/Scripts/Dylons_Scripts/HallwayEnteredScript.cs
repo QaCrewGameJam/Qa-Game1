@@ -2,19 +2,11 @@ using UnityEngine;
 
 public class HallwayEnteredScript : MonoBehaviour
 {
-    [SerializeField] public GameObject forwardCheckTrigger;
-    [SerializeField] public GameObject backwardCheckTrigger;
+    [SerializeField] GameObject forwardCheckTrigger;
+    [SerializeField] GameObject backwardCheckTrigger;
 
-    void Start()
-    {
-        
-    }
-
-    void Update()
-    {
-
-    }
-
+    [SerializeField] GameObject backDoor;
+    [SerializeField] GameObject backAirLock;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -22,9 +14,10 @@ public class HallwayEnteredScript : MonoBehaviour
         {
             forwardCheckTrigger.SetActive(true);
             backwardCheckTrigger.SetActive(true);
+            backDoor.SetActive(false);
+            backAirLock.SetActive(true);
 
-            //this.gameObject.SetActive(false);
-            Destroy(this.gameObject);
+            this.gameObject.SetActive(false);
         }
     }
 
