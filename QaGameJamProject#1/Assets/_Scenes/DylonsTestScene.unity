@@ -1122,6 +1122,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 847713170996878372, guid: b439e618d6d2e4047968fc161e80a6f6, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 1.796
+      objectReference: {fileID: 0}
     - target: {fileID: 1704849037950471745, guid: b439e618d6d2e4047968fc161e80a6f6, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -1140,11 +1144,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4186551294203704355, guid: b439e618d6d2e4047968fc161e80a6f6, type: 3}
       propertyPath: m_text
-      value: "Congrats on making it to the next air lock!!\nI'm hopping you were
-        paying attention to the \nhallway. From now on we will either \nchange something
-        or we wont, YOU will have \nto decide. If we didn't then please continue
-        \nforward, but if we did you must turn around. \nOnly way to escape is to
-        choose correctly 6\ntimes in a row...... Good Luck!  ;)"
+      value: "Congrats you made it!!\nI'm hopping you were paying attention to \nyour
+        surroundings. The real game starts \nnow, come back here if you see anything
+        \nthat seems a little..... off. \n\nGood Luck ;) "
       objectReference: {fileID: 0}
     - target: {fileID: 4769980117430543558, guid: b439e618d6d2e4047968fc161e80a6f6, type: 3}
       propertyPath: m_LocalPosition.x
