@@ -5,11 +5,13 @@ public class HallwaySwitchScriptForwards : MonoBehaviour
 {
 
     [SerializeField] GameObject player;
-    [SerializeField] GameObject hallwayPrefab;
+    //[SerializeField] GameObject hallwayPrefab;
     [SerializeField] Vector3 hallwayPivotPos;
     GameObject tempObject;
     GameObject hallwayMaster;
     List<GameObject> hallwayList = new List<GameObject>();
+    [SerializeField] private GameObject[] randomHallway;
+    [SerializeField] private int prefabIndex;
 
     int spawncounter = 0;
     private Vector3 hallwayTriggerPos;
@@ -38,12 +40,15 @@ public class HallwaySwitchScriptForwards : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-
+        
 
         if (other.gameObject.tag == "Player")
         {
+            prefabIndex = UnityEngine.Random.Range(0, randomHallway.Length);
+            Debug.Log(prefabIndex);
+
             //Debug.Log(hallwayTriggerPos);
-            tempObject = Instantiate(hallwayPrefab, hallwayPivotPos, transform.rotation = Quaternion.Euler(0, 0, 0));
+            tempObject = Instantiate(randomHallway[prefabIndex], hallwayPivotPos, transform.rotation = Quaternion.Euler(0, 0, 0));
             //Debug.Log(hallwayPrefab);
             hallwayMaster.GetComponent<MasterHallwayControl>().AddHallwayToList(tempObject);
 
@@ -55,9 +60,9 @@ public class HallwaySwitchScriptForwards : MonoBehaviour
 
     void CheckIfNewObject()
     {
-        if (hallwayPrefab == null)
+        if (randomHallway[prefabIndex] == null)
         {
-            hallwayPrefab = Resources.Load("ForwardsPrefab(Clone)") as GameObject;
+            randomHallway[prefabIndex] = Resources.Load("ForwardsPrefab(Clone)") as GameObject;
         }
 
     }
