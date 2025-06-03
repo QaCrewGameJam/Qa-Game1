@@ -62,7 +62,7 @@ public class HallwaySwitchScriptForwards : MonoBehaviour
     {
         if (randomHallway[prefabIndex] == null)
         {
-            randomHallway[prefabIndex] = Resources.Load("ForwardsPrefab(Clone)") as GameObject;
+            //randomHallway[prefabIndex] = Resources.Load("ForwardsPrefab(Clone)") as GameObject;
         }
 
     }
