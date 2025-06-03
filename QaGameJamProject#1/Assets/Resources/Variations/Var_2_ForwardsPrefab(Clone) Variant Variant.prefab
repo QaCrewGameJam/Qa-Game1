@@ -435,8 +435,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
-  hallwayPrefab: {fileID: 2049747879710930661}
   hallwayPivotPos: {x: 0, y: 0, z: 0}
+  randomHallway:
+  - {fileID: 1505928750728108724, guid: e3c276aa893d8b84b8f1f1896fba596e, type: 3}
+  - {fileID: 2049747879710930661}
+  prefabIndex: 0
 --- !u!1 &212145309769691577
 GameObject:
   m_ObjectHideFlags: 0
@@ -8597,8 +8600,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
-  hallwayPrefab: {fileID: 1452085840332941616, guid: 427cf8ed4f6033d479c2f79fc846f652, type: 3}
   hallwayPivotPos: {x: 99.68131, y: 0, z: 38.50885}
+  randomHallway:
+  - {fileID: 2144268114923494428, guid: 382d0c0275c903948887a580726ea44f, type: 3}
+  - {fileID: 8770667855091929684, guid: 5eaaf4e10b172544ba4c3ed7aa81b661, type: 3}
+  prefabIndex: 0
 --- !u!1 &8995775672418258845
 GameObject:
   m_ObjectHideFlags: 0

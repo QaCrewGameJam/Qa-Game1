@@ -8,10 +8,34 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1498272731117934348, guid: e88264c5b2bbac642ab2978be84bce33, type: 3}
+      propertyPath: randomHallway.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1498272731117934348, guid: e88264c5b2bbac642ab2978be84bce33, type: 3}
+      propertyPath: 'randomHallway.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1505928750728108724}
+    - target: {fileID: 1498272731117934348, guid: e88264c5b2bbac642ab2978be84bce33, type: 3}
+      propertyPath: 'randomHallway.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2049747879710930661, guid: 26be41dea830d4845b2bc0d325b8938a, type: 3}
     - target: {fileID: 2277324984462544870, guid: e88264c5b2bbac642ab2978be84bce33, type: 3}
       propertyPath: m_Name
-      value: ForwardsPrefab(Clone) Variant
+      value: Var_1_ForwardsPrefab(Clone) Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 2416134132767487354, guid: e88264c5b2bbac642ab2978be84bce33, type: 3}
+      propertyPath: randomHallway.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2416134132767487354, guid: e88264c5b2bbac642ab2978be84bce33, type: 3}
+      propertyPath: 'randomHallway.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2144268114923494428, guid: 382d0c0275c903948887a580726ea44f, type: 3}
+    - target: {fileID: 2416134132767487354, guid: e88264c5b2bbac642ab2978be84bce33, type: 3}
+      propertyPath: 'randomHallway.Array.data[1]'
+      value: 
+      objectReference: {fileID: 8770667855091929684, guid: 5eaaf4e10b172544ba4c3ed7aa81b661, type: 3}
     - target: {fileID: 6089975695193172538, guid: e88264c5b2bbac642ab2978be84bce33, type: 3}
       propertyPath: m_LocalPosition.x
       value: -249.13516
@@ -57,3 +81,8 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e88264c5b2bbac642ab2978be84bce33, type: 3}
+--- !u!1 &1505928750728108724 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2277324984462544870, guid: e88264c5b2bbac642ab2978be84bce33, type: 3}
+  m_PrefabInstance: {fileID: 827691710253454674}
+  m_PrefabAsset: {fileID: 0}

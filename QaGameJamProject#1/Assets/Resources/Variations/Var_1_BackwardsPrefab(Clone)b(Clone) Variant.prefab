@@ -8,6 +8,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 611761117444194627, guid: 427cf8ed4f6033d479c2f79fc846f652, type: 3}
+      propertyPath: randomHallway.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 611761117444194627, guid: 427cf8ed4f6033d479c2f79fc846f652, type: 3}
+      propertyPath: 'randomHallway.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1505928750728108724, guid: e3c276aa893d8b84b8f1f1896fba596e, type: 3}
+    - target: {fileID: 611761117444194627, guid: 427cf8ed4f6033d479c2f79fc846f652, type: 3}
+      propertyPath: 'randomHallway.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2049747879710930661, guid: 26be41dea830d4845b2bc0d325b8938a, type: 3}
     - target: {fileID: 1073526409549879896, guid: 427cf8ed4f6033d479c2f79fc846f652, type: 3}
       propertyPath: m_LocalPosition.x
       value: -188.18677
@@ -50,10 +62,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1452085840332941616, guid: 427cf8ed4f6033d479c2f79fc846f652, type: 3}
       propertyPath: m_Name
-      value: BackwardsPrefab(Clone)b(Clone) Variant
+      value: Var_1_BackwardsPrefab(Clone)b(Clone) Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 8309410743210236903, guid: 427cf8ed4f6033d479c2f79fc846f652, type: 3}
+      propertyPath: randomHallway.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8309410743210236903, guid: 427cf8ed4f6033d479c2f79fc846f652, type: 3}
+      propertyPath: 'randomHallway.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2144268114923494428}
+    - target: {fileID: 8309410743210236903, guid: 427cf8ed4f6033d479c2f79fc846f652, type: 3}
+      propertyPath: 'randomHallway.Array.data[1]'
+      value: 
+      objectReference: {fileID: 8770667855091929684, guid: 5eaaf4e10b172544ba4c3ed7aa81b661, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 427cf8ed4f6033d479c2f79fc846f652, type: 3}
+--- !u!1 &2144268114923494428 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1452085840332941616, guid: 427cf8ed4f6033d479c2f79fc846f652, type: 3}
+  m_PrefabInstance: {fileID: 713574377125147948}
+  m_PrefabAsset: {fileID: 0}

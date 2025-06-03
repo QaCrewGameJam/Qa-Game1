@@ -8,11 +8,13 @@ public class HallwaySwitchScript : MonoBehaviour
 {
 
     [SerializeField] GameObject player;
-    [SerializeField] GameObject hallwayPrefab;
+    //[SerializeField] GameObject hallwayPrefab;
     [SerializeField] Vector3 hallwayPivotPos;
     GameObject tempObject;
     GameObject hallwayMaster;
     List<GameObject> hallwayList = new List<GameObject>();
+    [SerializeField] private GameObject[] randomHallway;
+    [SerializeField] private int prefabIndex;
 
     int spawncounter = 0;
     private Vector3 hallwayTriggerPos;
@@ -44,8 +46,10 @@ public class HallwaySwitchScript : MonoBehaviour
 
         if (other.gameObject.tag == "Player")
         {
+
+            prefabIndex = UnityEngine.Random.Range(0, randomHallway.Length);
             //Debug.Log(hallwayTriggerPos);
-            tempObject =Instantiate(hallwayPrefab, hallwayPivotPos, transform.rotation = Quaternion.Euler(0, 180, 0));
+            tempObject =Instantiate(randomHallway[prefabIndex], hallwayPivotPos, transform.rotation = Quaternion.Euler(0, 180, 0));
             //Debug.Log(hallwayPrefab);
             hallwayMaster.GetComponent<MasterHallwayControl>().AddHallwayToList(tempObject);
 
@@ -57,9 +61,9 @@ public class HallwaySwitchScript : MonoBehaviour
 
     void CheckIfNewObject()
     {
-        if(hallwayPrefab == null)
+        if(randomHallway[prefabIndex] == null)
         {
-            hallwayPrefab = Resources.Load("BackwardsTestPrefab(Clone)") as GameObject;
+            //randomHallway[prefabIndex] = Resources.Load("BackwardsTestPrefab(Clone)") as GameObject;
         }
 
     }
