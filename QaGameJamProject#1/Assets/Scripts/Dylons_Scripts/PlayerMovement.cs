@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -20,8 +21,14 @@ public class PlayerMovement : MonoBehaviour
 
     Rigidbody rb;
 
-    public AudioSource walking;
-    public AudioSource running;
+    [Header("Audio")]
+    [SerializeField] private AudioClip[] footStepAudio;
+    [SerializeField] private AudioClip[] runningAudio;
+    private AudioSource audioSource;
+    public float FootStepFrequency = 10;
+    public float RunningFrequency = 100;
+    private float StepCounter;
+    private bool Stepping;
 
     [Header("Input Actions")]
     [SerializeField] private InputActionAsset PlayerControls;
@@ -36,6 +43,8 @@ public class PlayerMovement : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         rb.freezeRotation = true;
+
+        audioSource = GetComponent<AudioSource>();
 
         moveAction = PlayerControls.FindActionMap("Player").FindAction("Move");
         lookAction = PlayerControls.FindActionMap("Player").FindAction("Look");
@@ -97,11 +106,53 @@ public class PlayerMovement : MonoBehaviour
 
         if(horizontalInput != 0 && isRunning == true || verticalInput != 0 && isRunning == true)
         {
-            //running.Play();
+            Run();
         }
         else if (horizontalInput != 0 || verticalInput != 0)
         {
-            //walking.Play();
+            Step();
         }
+    }
+
+    private void Step()
+    {
+        StepCounter = Mathf.Sin(Time.time * FootStepFrequency);
+
+        if (StepCounter > 0.97f && Stepping == false)
+        {
+            Stepping = true;
+            AudioClip clip = GetRandomClip();
+            audioSource.PlayOneShot(clip);
+        }
+        else if (Stepping == true && StepCounter < -0.97f)
+        {
+            Stepping = false;
+        }
+    }
+
+    private AudioClip GetRandomClip()
+    {
+        return footStepAudio[UnityEngine.Random.Range(0, footStepAudio.Length)];
+    }
+
+    private void Run()
+    {
+        StepCounter = Mathf.Sin(Time.time * RunningFrequency);
+
+        if (StepCounter > 0.97f && Stepping == false)
+        {
+            Stepping = true;
+            AudioClip clip = GetRandomRunClip();
+            audioSource.PlayOneShot(clip);
+        }
+        else if (Stepping == true && StepCounter < -0.97f)
+        {
+            Stepping = false;
+        }
+    }
+
+    private AudioClip GetRandomRunClip()
+    {
+        return runningAudio[UnityEngine.Random.Range(0, runningAudio.Length)];
     }
 }
