@@ -439,6 +439,7 @@ MonoBehaviour:
   randomHallway:
   - {fileID: 1505928750728108724, guid: e3c276aa893d8b84b8f1f1896fba596e, type: 3}
   - {fileID: 2049747879710930661}
+  - {fileID: 1329270520143519219, guid: 87abbe900f18492459d99f12a50ed669, type: 3}
   prefabIndex: 0
 --- !u!1 &212145309769691577
 GameObject:
@@ -8604,6 +8605,7 @@ MonoBehaviour:
   randomHallway:
   - {fileID: 2144268114923494428, guid: 382d0c0275c903948887a580726ea44f, type: 3}
   - {fileID: 8770667855091929684, guid: 5eaaf4e10b172544ba4c3ed7aa81b661, type: 3}
+  - {fileID: 6166990085878153793, guid: d123ec8ee0e15eb4abbaa4bd6ac1db0a, type: 3}
   prefabIndex: 0
 --- !u!1 &8995775672418258845
 GameObject:

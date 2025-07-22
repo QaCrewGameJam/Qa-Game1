@@ -13,6 +13,8 @@ public class HallwaySwitchScriptForwards : MonoBehaviour
     [SerializeField] private GameObject[] randomHallway;
     [SerializeField] private int prefabIndex;
 
+    private bool turnAround = false;
+
     int spawncounter = 0;
     private Vector3 hallwayTriggerPos;
 
@@ -23,7 +25,15 @@ public class HallwaySwitchScriptForwards : MonoBehaviour
         //hallwayPivotPos = GameObject.FindGameObjectWithTag("HallwayPivotForwards").transform.position;
 
         // Finds Object Position and adds to the transform for the forward spawn location
-        hallwayPivotPos = this.gameObject.transform.position + new Vector3(-72, -2.85f, 132);
+        if (turnAround == true)
+        {
+            hallwayPivotPos = this.gameObject.transform.position + new Vector3(-70, -2.859f, 130);
+            turnAround = false;
+        }
+        else
+        {
+            hallwayPivotPos = this.gameObject.transform.position + new Vector3(-71.832f, -2.859f, 132);
+        }
         player = GameObject.FindGameObjectWithTag("Player");
         CheckIfNewObject();
 

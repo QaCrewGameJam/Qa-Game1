@@ -10,7 +10,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1498272731117934348, guid: e88264c5b2bbac642ab2978be84bce33, type: 3}
       propertyPath: randomHallway.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1498272731117934348, guid: e88264c5b2bbac642ab2978be84bce33, type: 3}
       propertyPath: 'randomHallway.Array.data[0]'
@@ -20,13 +20,17 @@ PrefabInstance:
       propertyPath: 'randomHallway.Array.data[1]'
       value: 
       objectReference: {fileID: 2049747879710930661, guid: 26be41dea830d4845b2bc0d325b8938a, type: 3}
+    - target: {fileID: 1498272731117934348, guid: e88264c5b2bbac642ab2978be84bce33, type: 3}
+      propertyPath: 'randomHallway.Array.data[2]'
+      value: 
+      objectReference: {fileID: 1329270520143519219, guid: 87abbe900f18492459d99f12a50ed669, type: 3}
     - target: {fileID: 2277324984462544870, guid: e88264c5b2bbac642ab2978be84bce33, type: 3}
       propertyPath: m_Name
       value: Var_1_ForwardsPrefab(Clone) Variant
       objectReference: {fileID: 0}
     - target: {fileID: 2416134132767487354, guid: e88264c5b2bbac642ab2978be84bce33, type: 3}
       propertyPath: randomHallway.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2416134132767487354, guid: e88264c5b2bbac642ab2978be84bce33, type: 3}
       propertyPath: 'randomHallway.Array.data[0]'
@@ -36,6 +40,10 @@ PrefabInstance:
       propertyPath: 'randomHallway.Array.data[1]'
       value: 
       objectReference: {fileID: 8770667855091929684, guid: 5eaaf4e10b172544ba4c3ed7aa81b661, type: 3}
+    - target: {fileID: 2416134132767487354, guid: e88264c5b2bbac642ab2978be84bce33, type: 3}
+      propertyPath: 'randomHallway.Array.data[2]'
+      value: 
+      objectReference: {fileID: 6166990085878153793, guid: d123ec8ee0e15eb4abbaa4bd6ac1db0a, type: 3}
     - target: {fileID: 6089975695193172538, guid: e88264c5b2bbac642ab2978be84bce33, type: 3}
       propertyPath: m_LocalPosition.x
       value: -249.13516

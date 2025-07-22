@@ -10,7 +10,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 611761117444194627, guid: 427cf8ed4f6033d479c2f79fc846f652, type: 3}
       propertyPath: randomHallway.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 611761117444194627, guid: 427cf8ed4f6033d479c2f79fc846f652, type: 3}
       propertyPath: 'randomHallway.Array.data[0]'
@@ -20,6 +20,10 @@ PrefabInstance:
       propertyPath: 'randomHallway.Array.data[1]'
       value: 
       objectReference: {fileID: 2049747879710930661, guid: 26be41dea830d4845b2bc0d325b8938a, type: 3}
+    - target: {fileID: 611761117444194627, guid: 427cf8ed4f6033d479c2f79fc846f652, type: 3}
+      propertyPath: 'randomHallway.Array.data[2]'
+      value: 
+      objectReference: {fileID: 1329270520143519219, guid: 87abbe900f18492459d99f12a50ed669, type: 3}
     - target: {fileID: 1073526409549879896, guid: 427cf8ed4f6033d479c2f79fc846f652, type: 3}
       propertyPath: m_LocalPosition.x
       value: -188.18677
@@ -66,7 +70,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8309410743210236903, guid: 427cf8ed4f6033d479c2f79fc846f652, type: 3}
       propertyPath: randomHallway.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8309410743210236903, guid: 427cf8ed4f6033d479c2f79fc846f652, type: 3}
       propertyPath: 'randomHallway.Array.data[0]'
@@ -76,6 +80,10 @@ PrefabInstance:
       propertyPath: 'randomHallway.Array.data[1]'
       value: 
       objectReference: {fileID: 8770667855091929684, guid: 5eaaf4e10b172544ba4c3ed7aa81b661, type: 3}
+    - target: {fileID: 8309410743210236903, guid: 427cf8ed4f6033d479c2f79fc846f652, type: 3}
+      propertyPath: 'randomHallway.Array.data[2]'
+      value: 
+      objectReference: {fileID: 6166990085878153793, guid: d123ec8ee0e15eb4abbaa4bd6ac1db0a, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
