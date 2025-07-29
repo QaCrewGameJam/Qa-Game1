@@ -12,6 +12,8 @@ public class HallwayEnteredScript : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
+            // Starting hallway causes a error message because there is nothing assigned to it.
+
             forwardCheckTrigger.SetActive(true);
             backwardCheckTrigger.SetActive(true);
             backDoor.SetActive(false);

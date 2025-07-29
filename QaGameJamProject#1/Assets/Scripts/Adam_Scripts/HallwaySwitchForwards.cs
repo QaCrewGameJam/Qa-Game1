@@ -34,6 +34,10 @@ public class HallwaySwitchScriptForwards : MonoBehaviour
         {
             hallwayPivotPos = this.gameObject.transform.position + new Vector3(-71.832f, -2.859f, 132);
         }
+
+
+
+
         player = GameObject.FindGameObjectWithTag("Player");
         CheckIfNewObject();
 

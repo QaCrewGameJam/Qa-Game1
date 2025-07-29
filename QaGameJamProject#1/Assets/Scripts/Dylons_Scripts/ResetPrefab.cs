@@ -11,6 +11,8 @@ public class ResetPrefab : MonoBehaviour
 
 
 
+
+
     private void OnTriggerEnter(Collider other)
     {
         hallwayCheckTrigger.SetActive(true);

@@ -24,7 +24,9 @@ public class HallwaySwitchScript : MonoBehaviour
     {
         hallwayTriggerPos = this.gameObject.transform.position;
         //hallwayPivotPos = GameObject.FindGameObjectWithTag("HallwayPivot").transform.position;
-        hallwayPivotPos = this.gameObject.transform.position + new Vector3(75.453f, 0, -130.8f);
+        //hallwayPivotPos = this.gameObject.transform.position + new Vector3(75.453f, 0, -130.8f);
+        hallwayPivotPos = GameObject.FindGameObjectWithTag("HallwayPivot").transform.position + new Vector3(75.60771f, 0, -130);
+
         player = GameObject.FindGameObjectWithTag("Player");
         CheckIfNewObject();
         hallwayMaster = GameObject.FindGameObjectWithTag("HallwayList");
